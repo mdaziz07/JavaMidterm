@@ -179,82 +179,126 @@ What is the difference between JDK and JVM?
 Answer: JDK is inclusion of JVM, JRE, Libraries, etc.
 
 What is the difference between JVM and JRE?
-Answer:
+Answer: Java Runtime Environment includes JVM and Class Libraries. JVM process the java bytecode.
 
 Explain the difference between compile-time and run-time?
-Answer:
+Answer: Compile-time is when program is compile. On ther other hand, Run-time is when program is executed.
 
 What is heap?
-Answer:
+Answer: Heap is memory where java objects live.
 
 How does Java manage its memory?
-Answer:
+Answer: Java uses an automatic memory management system called a garbage collector.
+For primitive data type java use Stack and non-primitive data type java use Heap.
 
 What is the difference between String, StringBuffer and StringBuilder?
 Answer:
+String                          StringBuffer                        StringBuilder
+Immutable                       Non-immutable                       non-immutable
+No data inconsitancies          Thread safe                         Non-thread safe
+efficient memory management     Slower                              Faster
+Final Class                     Have methods to manipulate          Have methods to manipulate string
+                                string
 
 What is Singleton class?
-Answer:
+Answer: Singleton class is a design pattern for a class. a singleton class is a class that can have only
+one object at a time just like a static field.
 
 What is Serialization and Deserialization?
-Answer:
+Answer:Serialization is a mechanism of converting the state of an object into a byte stream.
+Deserialization is the reverse process where the byte stream is used to recreate the actual Java object
+in memory.
 
 Explain the difference between While and Do..While loops?
-Answer:
+Answer: In while loop, condition are checked whether it is true or false before executing the code blocks.
+In Do..While loop, code blocks are executed at least One time before it check the condition.
+In both cases we are uncertain about the number of iteration we need.
 
 What is Enum?
-Answer:
-
+Answer: An enum is a special data type that enables for a variable to be a set of predefined constants. We
+can declare enum using keyword 'enum' the way we declare a class or we can declare inside class. Syntax:
+public enum Directions {
+    NORTH, EAST, SOUTH, WEST
+.
 What is Iterator?
-Answer:
+Answer: An Iterator is an object that can be used to loop through collections, like ArrayList and HashSet.
+It is called an "iterator" because "iterating" is the technical term for looping. Syntax:
+Iterator<> it = reference_variable.iterator();
 
 Which one will take more memory: an int or Integer? Why?
-Answer:
+Answer:Integer will take more memory because it is an object(non-primitive) where int is primitive data
+type with definite size.
 
 Why are Strings considered to be immutable in Java?
-Answer:
+Answer: String is immutable means that you cannot change the object itself, but you can change the reference
+to the object. String is a final class which restrict user from any modification.
 
 What is constructor chaining in Java?
-Answer:
+Answer:Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
+Constructor chaining occurs through inheritance. A sub-class constructor’s task is to call super class’s
+constructor first. This ensures that creation of sub class’s object starts with the initialization of the
+data members of the super classConstructor.
 
 The difference between Serial and Parallel Garbage Collector?
-Answer:
+Answer: The main difference between Serial GC and Parallel GC is that a serial collector is a default copying
+collector which uses only one GC thread for garbage collection while a parallel collector uses multiple GC
+threads for garbage collection.
 
 What does JIT stands for?
-Answer:
+Answer:Just In Time.
 
 Explain the process of Java garbage collection?
-Answer:
+Answer: Garbage collection is an automatic memory management process in Java done by JVM. When Java programs
+run on the JVM, objects are created on the heap. Eventually, some objects will no longer be needed. The
+garbage collector finds these unused objects and deletes them to free up memory.
 
 Can you guarantee the garbage collection process?
-Answer:
+Answer: Though garbage collection process is very efficient but it does not guarantee that a program will
+not run out of memory. The purpose of garbage collection is to identify and discard objects that are no
+longer needed by a Java program, so that their resources can be reused.
 
 What is the difference between stack and heap in Java?
-Answer:
+Answer: Stac is a memory space for primitive data types and reference variables.
+Heap: Heap is a memory space for non-primitive data types.
 
 What is reflection in Java and why is it useful?
-Answer:
+Answer: Its a feature which allows an executing Java program to examine upon itself, and manipulate
+internal properties of the program. For example, it's possible for a Java class to obtain the names of
+all its members and display them. Its like having a snapshot of the class.
 
 What is multithreading in Java?
-Answer:
+Answer: Multithreading in Java is a process of executing two or more threads simultaneously to maximum
+utilization of CPU.
 
 What is synchronization in Java?
-Answer:
+Answer: In general, synchronization is used to protect access to resources that are accessed in multithreading.
 
 What is a Framework?
-Answer:
+Answer:  A framework is a set structure in which tasks are performed or completed. Typically, a framework
+refers to an often layered structure that indicates what kind of programs can or should be built and how
+they would connect to each other. Basically, a framework works as a kind of support structure for something
+to be built on top of.
 
 What are the testing Frameworks available in Java?
-Answer:
+Answer: Selenium, JUnit, TestNG, Cucumber, Serenity, etc.
 
 What are jUnit and testNG?
-Answer:
+Answer: JUnit and TestNG is Automation testing frameworks.
 
 What are the dependencies for this project?
-Answer:
+Answer: Apache po, Mysql connectors, etc.
 
 What is dependency injection in Java?
-Answer:
+Answer: In general. dependency injection is called Inversion of Control. A Java class has a dependency on
+another class, if it uses an instance of this class. We call this a class dependency. To read an Exel file
+Java is depends on outside libraries which are not built in Java.
 
 Explain what static binding and dynamic binding is?
-Answer:
+Answer: The binding which can be resolved at compile time by compiler is known as static or early binding.
+The binding of static, private and final methods is compile-time. The reason is that these methods cannot
+be overridden.
+        Dynamic Binding happens at runtime. Method Overriding is a perfect example of dynamic binding as
+in overriding both parent and child classes have same method and in this case the type of the object
+determines which method is to be executed. The type of object is determined at the run time so this is
+known as dynamic binding.
+
