@@ -1,103 +1,182 @@
 ***ANSWER ALL QUESTIONS BELOW***
 
 What is a programming language?
-Answer:
+Answer: A programming language is a vocabulary and set of grammatical rules for instructing a computer or
+computing device to perform specific tasks. Example: C++, Java, Python etc.
 
-What is a JDK composed of? Define each components?
-Answer:
+What is a JDK composed of? Define each component?
+Answer:Java Development Kit (JDK) collection of libraries as well as inclusion of JRE, JVM etc.
+    Compiler: Compile source file(.java) to machine-readable bytecode file(.class).
+    Class Loader: Then the bytecode loaded to class loader inside JVM.
+    Bytecode verifier: Then JVM verify the bytecode if it is good or not. If not, then we get run-time error.
+    Interpreter: If everything ok, then bytecode pass into interpreter. Then our local machine able interpreted.
 
 What is an IDE?
-Answer:
+Answer: An integrated development environment (IDE) is software for building applications that combines
+common developer tools into a single graphical user interface (GUI). An IDE typically consists of: source
+code editor, debugger, local build automation.
 
 What are some of the most popular Java IDEs available in the market?
-Answer:
+Answer:IntelliJ, Eclipse, etc.
 
 Explain the entire java life cycle.
-Answer:
+Answer:Java compiler compile source file(.java) to machine-readable bytecode file(.class). Then the bytecode
+loaded to class loader inside JVM. Then Bytecode verifier, inside JVM verify the bytecode, if it is good
+or not. If not, then we get run-time error. If everything ok, then bytecode pass into interpreter.
+Then our local machine able interpreted.
 
 What is a class?
-Answer:
+Answer: Class is a blueprint. It comprised of two things States and Behavior.
+    State: Thing the object knows (instance variable).
+	Behavior: Thing the object does(methods).
 
 What is an object?
-Answer:
+Answer: An object is an instance of a class.
 
 What is the entry point of an application?
-Answer:
+Answer: Main method consider as an entry point of an application.
 
 Why is the main() static?
-Answer:
+Answer:Java main() method is always static, so that compiler can call it without the creation of an object
+or before the creation of an object of the class. The main() method is the starting point from where compiler
+starts program execution. So, the compiler needs to call the main() method. If the main() is allowed to be
+non-static, then while calling the main() method JVM has to instantiate its class, and it will cause problem
+because constructor of that class may take an argument.
 
 Which class is the superclass of all classes?
-Answer:
+Answer: 'Object' is the superclass of all classes.
 
 What is difference between path and classpath variables?
-Answer:
+Answer:Path is the environment variable where we add bin directory path of JDK.
+Classpath is the path for Java application where the classes we compiled will be available.
 
 What is the difference between an Interface and Abstract class?
-Answer:
+Answer:Need 'abstract' keyword before class keyword to achieve abstraction. To declare interface we use 'interface'
+key word insisted of 'class' keyword.
+Abstract class may or may not have abstract method. Interface inherently abstract. all methods of interface
+are by default abstract.
+Whereas a class can extend only one abstract class, it can take advantage of implementing multiple interfaces.
 
 Can you make an Object from an Interface and Abstract class? If yes or no, how would you do it?
-Answer:
+Answer: No. We can not instantiate an object from Interface or Abstract class.
 
 What is Access Modifier?
-Answer:
+Answer: Access modifier is a key word we add in a class or methods or variables to define it accessibility from other places(from different packages, classes). Access modifier can be:
+    Public: Accessible within the project.
+    Protected: Accessible within the same package.
+    private: Accessible only within the class member where it declared.
 
 What is OOP? Define each OOP concept.
-Answer:
+Answer: Object-oriented programming (OOP) is a computer programming model that organizes software design
+around objects, rather than functions and logic. An object can be defined as a data field that has unique
+attributes and behavior. Different OOP concepts are: Encapsulation, Polymorphism, Inheritance, and Abstraction,
+    Encapsulation: Data hiding. Limiting the interaction of visibility of variables or attributes of class
+    but still allowing interaction of them using getter and setter method.
+    Polymorphism: Is method overloading and method overriding. Two type of polymorphism:
+        1 - Compile-Time Polymorphism | Static Polymorphism (Method Overloading) can achieve
+                    - Name of the method(same name for all method)
+                    - Number of parameters
+                    - Data types of parameters
+                    - Order of parameters
+        2 - Run-Time Polymorphism | Dynamic Polymorphism (Method Overriding)
+                    - Name of the method
+                    - Number of parameters
+                    - Data types of parameters
+                    - Order of parameters
+    Inheritance: Inheritance - "IS-A" Relationship. A relationship between
+                    Parent Class/Super class and Child Class/Derived Class
+    Abstraction: Abstraction is the process of hiding the implementation details from the user, only the
+    functionality will be provided to the user. In other words, the user will have the information on what
+    the object does instead of exactly how it does it.
+              Rules:
+                     - Abstract Classes canNOT be instantiated
+                     - Abstract Classes can contain abstract methods, but it is not required
+                     - Abstract Classes can contain concrete methods, but it is not required
+                     - Abstract Classes can contain abstract + concrete methods, but neither are required
+                     - As soon as you provide an abstract method in a class, that class MUST be declared abstract
 
 What is Java Package and which package is imported by default?
-Answer:
+Answer: A package is a folder that organizes a set of related classes and interfaces. Java compiler imports
+java.lang package internally by default.
 
 What is an API? List some API's that you have used so far.
-Answer:
+Answer: Application Programming Interface (API) is a software intermediary that allows two applications
+to talk to each other. Twitter, Facebook, Google Maps etc.
 
 Does java support multiple inheritance? Why or why not?
-Answer:
+Answer: Java does not support multiple inheritance. Suppose we have three classes A, B, and C. Say A extends
+to B as well as to C and both B and C has method call doSomething(). Now, if a called doSomething() method
+at chilled class, java get confused and does not know which parent method have to call. That's why multiple
+inheritance is not possible.
 
 What is method overloading and when does it happen?
-Answer:
+Answer: Compile-Time Polymorphism or Static Polymorphism (Method Overloading) depend on
+        - Name of the method(same name for all method)
+        - Number of parameters
+        - Data types of parameters
+        - Order of parameters
 
 Explain exceptions in java and how to handle them.
-Answer:
+Answer: An exception is an event, which occurs during the execution of a program, that disrupts the normal
+flow of the program's instructions.A method catches an exception using a combination of the try and catch
+keywords. A try/catch block is placed around the code that might generate an exception.
+Syntax:
+        try {
+           // Protected code
+        } catch (ExceptionName e1) {
+           // Catch block
+        }
 
 What is static keyword? When and how do we use it?
-Answer:
+Answer: Static keyword make the class members(variable, methods) accessible/usable by other static method.
+The static keyword belongs to the class than an instance of the class.
 
 What is final keyword? When and how do we use it?
-Answer:
+Answer: The final keyword in java is used to restrict the user to make any change. We used Java final keyword:
+    - To stop value change.
+    - To stop method overriding.
+    - To stop inheritance.
 
 Explain the difference between final, finally and finalize?
-Answer:
+Answer: final is used to restrict the user to ake any change.
+        finally is used to handle exception whether an error occur or not.
+        finalize is a method called by garbage collector.
 
 What is a constructor?
-Answer:
+Answer: Constructor instantiate an object of a class.
 
 Can we have multiple constructors in a class?
-Answer:
+Answer:We can have multiple constructor in a class. it depends on:
+                    - Number of parameters
+                    - Data types of parameters
+                    - Order of parameters
 
 If we don't have a constructor declared, what is called during the object creation?
-Answer:
+Answer: Default constructor.
 
 What is "this" keyword in Java? When would we use it?
-Answer:
+Answer:'this' keyword is refers to global variables. We use it to intilize global variables by the values
+we are passing as arguments of constructor parameters.
 
 What is "super" keyword in Java? What are some scenarios we would use it?
-Answer:
+Answer:'super' keyword refers to parent class.
+    - To call override parent method.
+    - To pass arguments to the parent constructor.
 
 What does JVM stand for?
-Answer:
+Answer: Java Virtual Machine that read the java bytecode to be executed in a particular machine.
 
 Is JVM platform independent?
-Answer:
+Answer: Yes
 
 What version of Java are you using?
-Answer:
+Answer: JDK-11.
 
 What does JAR stand for?
-Answer:
+Answer: JAR stands for Java Archive.
 
 What is the difference between JDK and JVM?
-Answer:
+Answer: JDK is inclusion of JVM, JRE, Libraries, etc.
 
 What is the difference between JVM and JRE?
 Answer:
