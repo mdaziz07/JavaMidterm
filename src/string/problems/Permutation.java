@@ -9,5 +9,8 @@ public class Permutation {
 
         Write Java program to compute all permutations of any given String
          */
+        String str = "cab";
+
+
     }
 }
