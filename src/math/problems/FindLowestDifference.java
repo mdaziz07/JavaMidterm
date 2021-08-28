@@ -4,7 +4,7 @@ public class FindLowestDifference {
 
     public static void main(String[] args) {
         /*
-         Write a method to return the the lowest difference between these two arrays
+         Write a method to return the lowest difference between these two arrays
             HINT: The lowest difference between these arrays is 1
         */
 

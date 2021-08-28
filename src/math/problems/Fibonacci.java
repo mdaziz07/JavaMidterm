@@ -10,8 +10,20 @@ public class Fibonacci {
 
     public static void main(String[] args) {
 
+        int x = 0;
+        int y = 1;
+        int i = 0;
+        int factorial= 0;
+        System.out.print(x + ",");
+
+        do{
+            factorial = x + y;
+            y = x;
+            x = factorial;
+            System.out.print(factorial+",");
+            i++;
+        }while(i < 40);
 
     }
-
 
 }
