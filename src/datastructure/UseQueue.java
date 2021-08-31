@@ -1,5 +1,8 @@
 package datastructure;
 
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class UseQueue {
 
     public static void main(String[] args) {
@@ -10,6 +13,21 @@ public class UseQueue {
          * Store and retrieve data from/to a database table.
          */
 
+        Queue<Integer> queue = new PriorityQueue<>();
+
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+        queue.add(5);
+
+        System.out.println(queue.peek());
+        System.out.println(queue.poll());
+        System.out.println(queue.peek());
+
+        for(int x : queue){
+            System.out.println(x);
+        }
     }
 
 }

@@ -19,12 +19,14 @@ public class UnitTestSorting {
 
         // Verify if the unsorted array is sorted by the selectionSort() method
         try {
-            Assert.assertEquals(unSortedArray, sortedArray, "ARRAY IS NOT SORTED... YET!\n***YOU GOT THIS!***");
+            Assert.assertEquals(sortedArray, unSortedArray, "ARRAY IS NOT SORTED... YET!\n***YOU GOT THIS!***");
         } catch (Exception ex) {
             ex.getMessage();
         }
 
         // Implement Unit test for rest of the sorting algorithms below
+        //Numbers numbers = new Numbers();
+        System.out.println();
 
     }
 }

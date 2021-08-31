@@ -1,73 +1,113 @@
 ***ANSWER ALL QUESTIONS BELOW***
 
 Why do we need data structure?
-Answer:
+Answer: To organized, store, and manipulate data.
 
 What are the various operations that can be performed on different data structures?
-Answer:
+Answer: Search, sort, update, delete, insert, merge, etc.
 
 When would we use data structures in the real world?
 Answer:
 
 What is an Array?
-Answer:
+Answer: Collection of similar data types. Once an array is initialized, its size cannot be changed. Index
+always start from 0 index. Values stay ordered, unlike a Set. Arrays can hold duplicate values.
 
 What is the difference between Array and ArrayList?
-Answer:
+Answer: ArrayList is dynamic(in size), meaning, we can alter the size of a list even after initialization.
+Once an array is initialized, its size cannot be changed. Lists can hold different data types as values,
+UNLESS we restrict the type upon initializing. Array is collection of similar data types.
 
 What is a LinkedList?
-Answer:
+Answer: Linked List is a part of the Collection framework present in java.util package. This class is an
+implementation of the LinkedList data structure which is a linear data structure. The elements are linked
+using pointers and addresses. Each element is known as a node.
 
 How is an Array different from LinkedList?
-Answer:
+Answer: Array is not dynamic in size. LinkedList is dynamic in size. Array hold similar data type.
+LinkedList can hold different data type unless we specified.
 
 What is a Queue?
-Answer:
+Answer: Java Queue represents an ordered list of elements. Just like a real-world queue (for instance, in a
+bank or at ATM), Queue inserts elements at the end of the queue and removes from the beginning of the queue.
+Java Queue represents an ordered list of elements. Queue follows FIFO orders of inserting and remove it’s
+elements. FIFO stands for First In First Out.
 
 What is a Stack (not Java memory - refers to data structure)?
-Answer:
+Answer: A stack is an abstract data type that holds an ordered, linear sequence of items. In contrast to a
+queue, a stack is a last in, first out (LIFO) structure. A real-life example is a stack of plates: you can
+only take a plate from the top of the stack, and you can only add a plate to the top of the stack.
 
 What is FIFO and LIFO?
-Answer:
+Answer:FIFO stands for First In First Out. It's an order of inserting and removing data. The element first
+to get in, first to get out. LIFO stands for Last In First Out. The element last to in(insert), get first
+to out(delete).
 
 Explain Big O Notation?
-Answer:
+Answer: Big-O notation is the language we use for talking about how long an algorithm takes to run
+(time complexity) or how much memory is used by an algorithm (space complexity). Big-O notation can express
+the best, worst, and average-case running time of an algorithm.
 
 What is the best case to search an element from an array?
-Answer:
+Answer: The best case to search an element from an array is O(n).
 
 What is the worst case to search an element from an array?
-Answer:
+Answer: The worst case to search an element from an array is O(n).
 
 Describe what a tree data structure is?
-Answer:
+Answer: A tree is a collection of nodes connected by directed (or undirected) edges. A tree is a nonlinear
+data structure, compared to arrays, linked lists, stacks and queues which are linear data structures. A tree
+can be empty with no nodes or a tree is a structure consisting of one node called the root and zero or one
+or more subtrees. A tree has following general properties:
+        - One node is distinguished as a root.
+        - Every node (exclude a root) is connected by a directed edge from exactly one other node; A
+        direction is: parent -> children.
 
 Describe what a graph data structure is?
-Answer:
+Answer: A Graph in the data structure can be termed as a data structure consisting of data that is stored
+among many groups of edges(paths) and vertices (nodes), which are interconnected.
 
 What is the difference between the HashTable and HashMap?
-Answer:
+Answer: - HashMap is non-synchronized. It is not thread-safe and can’t be shared between many threads without
+        proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared
+        with many threads.
+        - HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key
+        or value.
+        - HashMap is generally preferred over HashTable if thread synchronization is not needed
 
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model
-Answer:
+Answer: RDBMS : Array.
+        Network data model: Graph Tree.
+        Hierarchical data model: Tree.
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
-Answer:
+Answer: HashMap in Java works on hashing principles. It is a data structure which allows us to store
+object and retrieve it in constant time O(1) provided we know the key. In hashing, hash functions are used
+to link key and value in HashMap.Using HashMap makes sense only when unique keys are available for the
+data we want to store. We should use it when searching for items based on a key and quick access time is
+an important requirement.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
-Answer:
+Answer: ArrayIndexOutOfBoundsException in java is error thrown to indicate that an array has been accessed
+with an illegal index. The index is either negative or greater than or equal to the size of the array.
 
 What are the different ways of copying an array into another array?
-Answer:
+Answer: - Create a new array of the same length and copy each element.
+        - Use the clone method of the array. Clone methods create a new array of the same size.
+        - Use System.arraycopy() method. arraycopy can be used to copy a subset of an array.
+
 
 What is DFS and BFS?
-Answer:
+Answer: BFS stands for Breadth First Search. DFS stands for Depth First Search. BFS uses Queue data
+structure for finding the shortest path. DFS uses Stack data structure.
 
 What is Recursion?
 Answer:
 
 What are linear and non-linear data Structures?
-Answer:
+Answer: The process in which a function calls itself directly or indirectly is called recursion and the
+corresponding function is called as recursive function. Using recursive algorithm, certain problems can be
+solved quite easily.
 
 
 Outline different sorting algorithms and their time complexities:

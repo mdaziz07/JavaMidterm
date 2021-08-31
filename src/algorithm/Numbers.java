@@ -21,7 +21,7 @@ public class Numbers {
 
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-        int[] num = new int[1000000];
+        int[] num = new int[10000];
         storeRandomNumbers(num);
 
         // Selection Sort

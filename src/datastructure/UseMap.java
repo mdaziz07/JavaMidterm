@@ -1,5 +1,7 @@
 package datastructure;
 
+import java.util.*;
+
 public class UseMap {
 
     public static void main(String[] args) {
@@ -10,6 +12,25 @@ public class UseMap {
          *
          * Store and retrieve data from/to a database table.
          */
+        List<String > color = new ArrayList<>();
+        color.add("Red");
+        color.add("Green");
+        color.add("Blue");
+        color.add("While");
+        color.add("Brown");
+
+        List<String> country = new ArrayList<>();
+        country.add("USA");
+        country.add("UK");
+        country.add("UAE");
+        country.add("USSR");
+
+        Map<String,List<String>> list = new HashMap<String, List<String>>();
+        list.put("color",color);
+        list.put("country",country);
+
+        System.out.println(list.get("color"));
+        System.out.println(list.get("country"));
 
     }
 
