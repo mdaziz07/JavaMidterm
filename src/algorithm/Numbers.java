@@ -43,7 +43,24 @@ public class Numbers {
         long insertionSortExecutionTime = algo.executionTime;
         System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
                 + insertionSortExecutionTime + " milliseconds");
+        connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "InsertionNumbers");
+        List<String> numbers1 = connectToSqlDB.readDataBase("insertion_sort", "InsertionNumbers");
+        printValue(numbers1);
 
+        int n1 = num.length;
+        randomize(num, n1);
+
+        //Bubble Sort
+        algo.bubbleSort(num);
+        long bubbleSortExecutionTime = algo.executionTime;
+        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+                + bubbleSortExecutionTime + " milliseconds");
+        connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "BubbleNumbers");
+        List<String> numbers2 = connectToSqlDB.readDataBase("bubble_sort", "BubbleNumbers");
+        printValue(numbers2);
+
+        int n2 = num.length;
+        randomize(num, n2);
         /*
          By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting
             algorithms
@@ -53,12 +70,7 @@ public class Numbers {
         /*
         Can you come to conclusion about which sorting algorithm is most efficient, given the size of the data set?
          */
-
     }
-
-
-
-
     /*
     HELPER METHODS
      */

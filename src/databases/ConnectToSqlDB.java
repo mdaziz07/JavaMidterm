@@ -93,6 +93,8 @@ public class ConnectToSqlDB {
         return data;
     }
 
+
+
     private void close() {
         try {
             if (resultSet != null) {
