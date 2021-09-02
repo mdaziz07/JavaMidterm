@@ -33,8 +33,8 @@ public class CsvReader {
                 String[] name = line.split(csvSplitBy);
                 System.out.println(name[0]);
 
-                roster.add(new Trainee(name[0].replace("\"", ""), name[0].replace("\"",
-                        ""), Integer.parseInt(name[0])));
+//                roster.add(new Trainee(name[0].replace("\"", ""), name[0].replace("\"",
+//                        ""), Integer.parseInt(name[0])));
             }
         } catch (IOException e) {
             e.printStackTrace();

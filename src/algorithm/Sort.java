@@ -76,47 +76,45 @@ public class Sort {
         return list;
     }
 
-    public int[] mergeSort(int[] array) {
+    public int[] mergeSort(int[] array, int l, int r) {
         final long startTime = System.currentTimeMillis();
         int[] list = array;
-        //implement here
-        int n = array.length;
-        int mid = n / 2;
-        int[] l = new int[mid];
-        int[] r = new int[n - mid];
-
-        for (int i = 0; i < mid; i++) {
-            l[i] = array[i];
+        if (l < r) {
+            int m = l + (r-l)/2;
+            mergeSort(list, l, m);
+            mergeSort(list, m+1, r);
+            merge(list, l, m, r);
         }
-        for (int i = mid; i < n; i++) {
-            r[i - mid] = array[i];
-        }
-        mergeSort(l);
-        mergeSort(r);
-        merge(array, l, r, mid, n - mid);
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return list;
     }
-
-    public static void merge(
-            int[] a, int[] l, int[] r, int left, int right) {
-
-        int i = 0, j = 0, k = 0;
-        while (i < left && j < right) {
-            if (l[i] <= r[j]) {
-                a[k++] = l[i++];
+    public static void merge(int[] array, int left, int middle, int right) {
+        int n1 = middle-left+1;
+        int n2 = right-middle;
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+        for(int i = 0;i < n1; i++) {
+            L[i] = array[left+i];
+        }
+        for(int i = 0;i < n2; i++) {
+            R[i] = array[middle+1+i];
+        }
+        int i = 0, j = 0, k =left;
+        while(i < n1 && j < n2) {
+            if(L[i] <= R[j]) {
+                array[k++] = L[i++];
             }
             else {
-                a[k++] = r[j++];
+                array[k++] = R[j++];
             }
         }
-        while (i < left) {
-            a[k++] = l[i++];
+        while(i < n1) {
+            array[k++] = L[i++];
         }
-        while (j < right) {
-            a[k++] = r[j++];
+        while(j < n2) {
+            array[k++] = R[j++];
         }
     }
 

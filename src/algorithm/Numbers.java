@@ -21,7 +21,7 @@ public class Numbers {
 
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-        int[] num = new int[10000];
+        int[] num = new int[100000];
         storeRandomNumbers(num);
 
         // Selection Sort
@@ -31,9 +31,9 @@ public class Numbers {
         System.out.println("Total Execution Time of " + num.length + " numbers in Selection Sort took: "
                 + selectionSortExecutionTime + " milliseconds");
 
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-        printValue(numbers);
+//        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
+//        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+//        printValue(numbers);
 
         int n = num.length;
         randomize(num, n);
@@ -43,29 +43,32 @@ public class Numbers {
         long insertionSortExecutionTime = algo.executionTime;
         System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
                 + insertionSortExecutionTime + " milliseconds");
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "InsertionNumbers");
-        List<String> numbers1 = connectToSqlDB.readDataBase("insertion_sort", "InsertionNumbers");
-        printValue(numbers1);
+//        connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "InsertionNumbers");
+//        List<String> numbers1 = connectToSqlDB.readDataBase("insertion_sort", "InsertionNumbers");
+//        printValue(numbers1);
 
-        int n1 = num.length;
-        randomize(num, n1);
+
+        randomize(num, n);
 
         //Bubble Sort
         algo.bubbleSort(num);
         long bubbleSortExecutionTime = algo.executionTime;
-        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+        System.out.println("Total Execution Time of " + num.length + " numbers in Bubble Sort took: "
                 + bubbleSortExecutionTime + " milliseconds");
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "BubbleNumbers");
-        List<String> numbers2 = connectToSqlDB.readDataBase("bubble_sort", "BubbleNumbers");
-        printValue(numbers2);
+//        connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "BubbleNumbers");
+//        List<String> numbers2 = connectToSqlDB.readDataBase("bubble_sort", "BubbleNumbers");
+//        printValue(numbers2);
 
-        int n2 = num.length;
-        randomize(num, n2);
-        /*
-         By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting
-            algorithms
-         */
 
+        randomize(num, n);
+
+        algo.mergeSort(num,0, num.length-1);
+        long mergeSortExecutionTime = algo.executionTime;
+        System.out.println("Total Execution Time of " + num.length + " numbers in Merge Sort took: "
+                + mergeSortExecutionTime + " milliseconds");
+//        connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "MergeNumbers");
+//        List<String> numbers3 = connectToSqlDB.readDataBase("merge_sort", "MergeNumbers");
+//        printValue(numbers3);
 
         /*
         Can you come to conclusion about which sorting algorithm is most efficient, given the size of the data set?
