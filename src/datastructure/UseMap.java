@@ -26,11 +26,11 @@ public class UseMap {
         country.add("USSR");
 
         Map<String,List<String>> list = new HashMap<String, List<String>>();
-        list.put("color",color);
-        list.put("country",country);
+        list.put("Color",color);
+        list.put("Country",country);
 
-        System.out.println(list.get("color"));
-        System.out.println(list.get("country"));
+        System.out.println("Color we have in the Map :" + list.get("Color"));
+        System.out.println("Countries we have in the Map: " + list.get("Country"));
 
     }
 

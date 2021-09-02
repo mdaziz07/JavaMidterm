@@ -14,17 +14,20 @@ public class UseQueue {
          */
 
         Queue<Integer> queue = new PriorityQueue<>();
+        for(int i = 10 ; i < 60; i+=10){
+            queue.add(i);
+        }
 
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
-        queue.add(4);
-        queue.add(5);
+        System.out.println("Printing Queue list using For Loop");
+        for(int x : queue){
+            System.out.println(x);
+        }
 
-        System.out.println(queue.peek());
-        System.out.println(queue.poll());
-        System.out.println(queue.peek());
+        System.out.println("Peeking first element from Queue: " + queue.peek());
+        System.out.println("Removing the very first element from Queue: " + queue.poll());
+        System.out.println("Peeking an element from Queue: " + queue.peek());
 
+        System.out.println("Printing the reaming Queue list using For Loop");
         for(int x : queue){
             System.out.println(x);
         }

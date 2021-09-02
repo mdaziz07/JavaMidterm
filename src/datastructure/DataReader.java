@@ -5,10 +5,7 @@ import databases.ConnectToSqlDB;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class DataReader {
 
@@ -18,8 +15,6 @@ public class DataReader {
     static FileReader fileReader;
     static BufferedReader bufferedReader;
     ConnectToSqlDB mysqlConnect = new ConnectToSqlDB();
-    //static LinkedList linkedList = new LinkedList<String >();
-    //static Stack stack = new Stack();
 
 
     public static void main(String[] args) {
@@ -42,23 +37,31 @@ public class DataReader {
         LinkedList <String> linkedList = new LinkedList<String >();
         Stack<String> stack = new Stack<>();
         String[] line = new String[]{};
-        ArrayList<String> arraylist = new ArrayList<>();
+
         try {
             fileReader = new FileReader(path);
             bufferedReader = new BufferedReader(fileReader);
 
             try {
+                int lineNumber = 0;
                 while ((data = bufferedReader.readLine()) != null) {
-                    System.out.println(data);
-                    connect.insertDataFromStringToSqlTable(data,"dataReader","Text");
-                    line = data.split(" ");
-                    arraylist.addAll(Arrays.asList(line));
-                }
-                System.out.println("\nDone reading file\n");
-                for(String st : arraylist){
-                    System.out.print(st);
-                }
+                    if (lineNumber == 0) {
+                        lineNumber++;
+                        continue;
+                    }
 
+                    if (data.isEmpty() || data.trim().equals("") || data.trim().equals("\n")) {
+                        continue;
+                    } else {
+                        System.out.println(data);
+                        //connect.insertDataFromStringToSqlTable(data,"dataReader","Text");
+                        String[] word = data.split(" ");
+                        for (int i = 0; i < word.length; i++) {
+                            linkedList.add(word[i]);
+                            stack.add(word[i]);
+                        }
+                    }
+                }
             } catch (Exception e1) {
                 System.out.println("UNABLE TO READ LINE");
             }
@@ -76,7 +79,21 @@ public class DataReader {
                 System.out.println("UNABLE TO CLOSE BUFFERED READER");
             }
         }
+        //Using For Loop
+        System.out.println("\n"+"Printing LinkedList");
+        for(String s : linkedList){
+            System.out.print(s);
+        }
+        System.out.println("\n"+"Printing Stack");
+        for(String s : stack){
+            System.out.print(s);
+        }
 
+        //Using While Loop
+        System.out.println("\n"+"Printing LinkList using While Loop");
+        Iterator<String> itr = linkedList.iterator();
+        while (itr.hasNext()) {
+            System.out.print(itr.next());
+        }
     }
-
 }

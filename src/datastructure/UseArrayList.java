@@ -2,6 +2,7 @@ package datastructure;
 
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class UseArrayList {
@@ -18,31 +19,27 @@ public class UseArrayList {
         list.add("UK");
         list.add("UAE");
         list.add("USSR");
-        System.out.println(list.get(1));
-        System.out.println(list.remove(3));
+
+        //Using For Loop to print ArrayList
+        System.out.println("The ArrayList using For Loop is:");
+        for(String st : list){
+            System.out.println(st);
+        }
+
+        //Using While Loop to print ArrayList
+        System.out.println("The ArrayList using While Loop is:");
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("Get an element from ArrayLst: " + list.get(1));
+        System.out.println("Remove an element form ArrayList: " + list.remove(3));
+
         try {
             System.out.println(list.get(3));
         }catch (IndexOutOfBoundsException ex){
-            System.out.println("You just deleted USSR from your list");
+            System.out.println("You are trying to get an element which you just deleted");
         }
-
-        for(String st : list){
-
-            System.out.println(st);
-
-        }
-
-        while(!list.isEmpty()){
-            for(int i = 0; true; i++){
-                //infinite loop?
-                System.out.println(list.get(i));
-                break;
-            }
-            System.out.println("your list is empty");
-            }
-
-
-
     }
-
 }
