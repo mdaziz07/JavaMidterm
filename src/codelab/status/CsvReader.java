@@ -9,37 +9,53 @@ import java.util.List;
 
 public class CsvReader {
 
+
+    String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
+    String line = "";
+    String csvSplitBy = ",";
+    BufferedReader br = null;
+    List<Trainee> roster = new ArrayList<>();
+
     public static void main(String[] args) {
         /*
          Comma-Separated Value(CSV) of CodeLab status is downloaded and it parsed.
          Based on number of solution you solved, message is generated for you.
          You need to find the average score of the class.
          */
+        CsvReader csvReader = new CsvReader();
 
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
-        String line = "";
-        String csvSplitBy = ",";
-        BufferedReader br = null;
-        List<Trainee> roster = new ArrayList<>();
+        csvReader.readFromFile();
+        csvReader.printResult();
+        csvReader.avgScore();
+    }
 
+    public void readFromFile() {
+        String[] name;
+        int sum = 0;
         try {
             br = new BufferedReader(new FileReader(csvFilePath));
             int lineNumber = 0;
             while ((line = br.readLine()) != null) {
+
                 if (lineNumber == 0) {
                     lineNumber++;
                     continue;
                 }
-                String[] name = line.split(csvSplitBy);
-                System.out.println(name[0]);
+                if (line.equals("DATES,,,,,,,,,,,,,,,,") || line.equals("POINTS,,,,,,,,,,,,,,,,")) {
+                    continue;
 
-//                roster.add(new Trainee(name[0].replace("\"", ""), name[0].replace("\"",
-//                        ""), Integer.parseInt(name[0])));
+                } else {
+                    name = line.split(csvSplitBy);
+                    roster.add(new Trainee(name[5].replace("\"", ""), name[4].replace("\"",
+                            ""), Integer.parseInt(name[10])));
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void printResult() {
         Collections.sort(roster);
 
         for (Trainee student : roster) {
@@ -64,4 +80,14 @@ public class CsvReader {
             }
         }
     }
+
+    public void avgScore() {
+        double totalScore = 0;
+        for (Trainee student : roster) {
+            totalScore += student.getNumberOfExercisesSolved();
+        }
+        System.out.println("Total Class Score: " + totalScore);
+        System.out.println("Average Class Score: " + totalScore / roster.size());
+    }
+
 }
